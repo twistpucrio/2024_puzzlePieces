@@ -1,4 +1,4 @@
-# PuzzlePieces - Projeto 1 - TWIST 2024-2
+# PuzzlePieces - Projeto 2 - TWIST 2024-2
 
 ## Jogo:
 
