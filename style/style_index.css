@@ -1,9 +1,29 @@
+
+
 body{
     background: linear-gradient(to top, #072731, #0b4249, #236E88);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    text-align: center;
+    
+    margin: 0;
+    padding: 0;
 
+}
+
+/*MUDAR A FONTEEEEEEEE */
+@font-face {
+    font-family: 'FonteDisney'; /* Nome que você usará para a fonte */
+    src: url('/fontes/waltograph42.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#container{
+ display: flex;
+ flex-direction: column;   
+ justify-content: space-between;
+ height: 105vh;
+ 
 }
 
 header {
@@ -11,39 +31,122 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 20px;
-}
-
-
-#logo_disney{
-    width: 170px;
-    position: absolute;
-    top: 100px;
-    left: 200px;
-    margin: 20px;
-    
-}
-
-#projeto{
-    position: absolute;
-    top: 100px;
-    right: 300px;
-    margin: 30px;
-    font-size: x-large;
-    color: azure;
-    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.839);
-
+    padding: 0px;
+    width: 100%;
+    height: 20%;
 }
 
 h1{
     font-size: xxx-large;
     color: azure;
-    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.839);
-    position: absolute;
-    top: 250px;
-    left: 42%;
+    text-align: center;
+    position: relative;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'FonteDisney';    
 }
 
-footer{
-    position: relative;
+#logo_disney{
+    width: 170px;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    margin: 20px; 
 }
+
+#projeto{
+    position: absolute;
+    top: 75%;
+    right: 25%;
+    margin: 30px;
+    font-size: x-large;
+    color: azure;
+
+}
+    
+
+
+#introducao{
+    top:50%;
+    position:absolute;
+    left:32%;
+    text-align: justify;
+    color: azure;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 10px;
+    width: 15%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.214);
+
+}
+
+
+nav a {
+    transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+nav a:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+#facil{
+    top:50%;
+    font-size: x-large;
+    position:absolute;
+    right:32%;
+    text-align: center;
+    color: azure;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 10px;
+    width: 10%;
+    height: 4%;
+    background-color: rgba(255, 255, 255, 0.214);
+    text-decoration: none;
+}
+
+#medio{
+    top:63.5%;
+    font-size: x-large;
+    position:absolute;
+    right:32%;
+    text-align: center;
+    color: azure;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 10px;
+    width: 10%;
+    height: 4%;
+    background-color: rgba(255, 255, 255, 0.214);
+    text-decoration: none;
+}
+
+#dificil{
+    top:77%;
+    font-size: x-large;
+    position:absolute;
+    right:32%;
+    text-align: center;
+    color: azure;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 10px;
+    width: 10%;
+    height: 4%;
+    background-color: rgba(255, 255, 255, 0.214);
+    text-decoration: none;
+}
+
+
+footer{
+    background-color: rgba(255, 255, 255, 0.214);
+    text-align:center;
+    font-size:medium;
+    color: aliceblue;
+    position: relative;
+    
+
+}
+
