@@ -1,44 +1,84 @@
-
 var currTile;
 var otherTile;
 
 var turns = 0;
-
-var imgOrder;
+var imgOrder = []; 
+var imgOrderCopy = [];
 
 function game(rows, columns) {
-
     imgOrder = create_imgOrder(rows, columns);
 
-    for (let r=0; r < rows; r++) {
-        for (let c=0; c < columns; c++) {
+    shuffle(imgOrder);
 
-            //<img id="0-0" src="1. ou webp">
+    imgOrderCopy = [...imgOrder];
+
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
             let tile = document.createElement("img");
             tile.id = r.toString() + c.toString();
-            tile.src = imgOrder.shift() + ".webp";
+            tile.src = imgOrder.shift() + ".webp"; 
 
-            //DRAG FUNCTIONALITY
-            tile.addEventListener("dragstart", dragStart);  //click an image to drag
-            tile.addEventListener("dragover", dragOver);    //moving image around while clicked
-            tile.addEventListener("dragenter", dragEnter);  //dragging image onto another one
-            tile.addEventListener("dragleave", dragLeave);  //dragged image leaving anohter image
-            tile.addEventListener("drop", dragDrop);        //drag an image over another image, drop the image
-            tile.addEventListener("dragend", dragEnd);      //after drag drop, swap the two tiles
+            tile.addEventListener("dragstart", dragStart);
+            tile.addEventListener("dragover", dragOver);
+            tile.addEventListener("dragenter", dragEnter);
+            tile.addEventListener("dragleave", dragLeave);
+            tile.addEventListener("drop", dragDrop);
+            tile.addEventListener("dragend", dragEnd);
 
             document.getElementById("board").append(tile);
         }
     }
 }
 
+function shuffle(array) {
+    let currentIndex = array.length;
+    
+    while (currentIndex !== 0) {
+
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+}
+
 function create_imgOrder(rows, columns) {
-    let imgOrder = [];
-    for (let r=0; r < rows; r++) {
-        for (let c=0; c < columns; c++) {
-            imgOrder.push(r.toString() + c.toString());
+    let order = []; 
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            order.push(r.toString() + c.toString());
         }
     }
-    return imgOrder;
+    return order; 
+}
+
+function atualizaLista(img1Id,index1,img2Id,index2){
+    if(index1 !=-1){
+        imgOrderCopy[index1] = img2Id;
+    }
+    if(index2 !=-1){
+        imgOrderCopy[index2] = img1Id;
+    }
+}
+
+function compareLists( ) {
+    if (imgOrder.length !== imgOrderCopy.length) {
+        return false;
+    }
+
+    for (let i = 0; i < imgOrderCopy.length; i++) {
+        if (imgOrderCopy[i] !== imgOrder[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function resolvido(){
+    if(ehIgual()){
+        alert("resolvido :(");
+    }
 }
 
 function play_audio() {
@@ -52,11 +92,11 @@ function pause_audio() {
 }
 
 function dragStart() {
-    currTile = this; //this refers to the img tile being dragged
+    currTile = this; 
 }
 
 function dragOver(e) {
-    e.preventDefault();
+    e.preventDefault(); 
 }
 
 function dragEnter(e) {
@@ -64,19 +104,16 @@ function dragEnter(e) {
 }
 
 function dragLeave() {
-
 }
 
 function dragDrop() {
-    otherTile = this; //this refers to the img tile being dropped on
+    otherTile = this; 
 }
-
 function dragEnd() {
-    if (!otherTile.src.includes("02.webp")) { //.jpg ou .webp
-        return;
+    if (!otherTile.src.includes("02.webp")) { 
     }
 
-    let currCoords = currTile.id.split(""); //ex) "0-0" -> ["0", "0"]
+    let currCoords = currTile.id.split(""); 
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
 
@@ -86,7 +123,6 @@ function dragEnd() {
 
     let moveLeft = r == r2 && c2 == c-1;
     let moveRight = r == r2 && c2 == c+1;
-
     let moveUp = c == c2 && r2 == r-1;
     let moveDown = c == c2 && r2 == r+1;
 
@@ -103,5 +139,13 @@ function dragEnd() {
         document.getElementById("turns").innerText = turns;
     }
 
+    let img1Id = r.toString() + c.toString();
+    let img2Id = r2.toString() + c2.toString();
+    
+    let index1 = imgOrderCopy.indexOf(img1Id);
+    let index2 = imgOrderCopy.indexOf(img12d);
+    
+    imgOrderCopy = atualizaLista(img1Id,index1,img2Id,index2);
 
+    resolvido();
 }
