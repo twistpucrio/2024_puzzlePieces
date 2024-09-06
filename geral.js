@@ -16,7 +16,8 @@ function game(rows, columns) {
         for (let c = 0; c < columns; c++) {
             let tile = document.createElement("img");
             tile.id = r.toString() + c.toString();
-            tile.src = imgOrder.shift() + ".webp"; 
+            tile.src = "img/" + imgOrder.shift() + ".jpg"; 
+            console.log(tile.src);
 
             tile.addEventListener("dragstart", dragStart);
             tile.addEventListener("dragover", dragOver);
@@ -110,7 +111,7 @@ function dragDrop() {
     otherTile = this; 
 }
 function dragEnd() {
-    if (!otherTile.src.includes("02.webp")) { 
+    if (!otherTile.src.includes("02.jpg")) { 
     }
 
     let currCoords = currTile.id.split(""); 
@@ -143,7 +144,7 @@ function dragEnd() {
     let img2Id = r2.toString() + c2.toString();
     
     let index1 = imgOrderCopy.indexOf(img1Id);
-    let index2 = imgOrderCopy.indexOf(img12d);
+    let index2 = imgOrderCopy.indexOf(img2Id);
     
     imgOrderCopy = atualizaLista(img1Id,index1,img2Id,index2);
 
