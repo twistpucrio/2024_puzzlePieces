@@ -15,16 +15,16 @@ body {
 
 #container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     height: 100%;
+    /* display: flex;
+    flex-direction: column; */
     gap: 2rem;
     padding: 1.8rem 2rem 0.7rem 2rem;
 }
 
 header {
     width: 100%;
-    height: auto; 
+    height: 20%; 
     display: flex;
     justify-content: flex-start;
 }
@@ -35,26 +35,27 @@ header img {
 }
 
 .content-area {
+    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 2rem;
     gap: 2rem;
 }
 
-#navigator {
+/* #navigator {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: auto;
     text-align: center;
     padding: 4rem;
-}
+} */
 
-.nav-link {
+/* .nav-link {
     width: 32%;
-    color: white;
     font-size: 3rem;
     padding: 1rem;
     border-radius: 2rem;
@@ -62,21 +63,34 @@ header img {
     background-color: #B95CF4;
     text-align: center;
     display: inline-block; 
-}
+} */
 
 .game-area {
     width: 100%;
-    max-width: 65rem;
-    height: 34.5rem;
-    aspect-ratio: 16 / 9; 
-    border-radius: 2rem;
+    max-width: 66rem;
+    height: 37rem;
+}
+.puzzle{
     background-color: #B95CF4;
+    border: 1rem solid #B95CF4;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+
+#board img {
+    width: 21.2rem; /*(tamanho original/3)-2 EM PIXELS*/
+    height: 11.1rem;
+    border: 0.1rem solid #B95CF4;
+}
 .controls {
     width: 100%;
-    height: auto; 
+    height: 10%; 
     display: flex;
+    padding: 1rem 4rem;
     justify-content: space-evenly;
     flex-wrap: wrap; 
     gap: 1rem;
@@ -91,13 +105,28 @@ button {
     cursor: pointer;
 }
 
-#board img {
-    width: 339px; /*(tamanho original/3)-2 EM PIXELS*/
-    height: 177px;
-    
-    border: 1px solid #B95CF4;
+
+footer {
+    width: 100%;
+    height: 20%;
+    background-color: #B95CF4;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
 }
 
+footer p {
+    font-size: 1.2rem;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
 @media (max-width: 768px) {
     #navigator {
         flex-direction: column;
@@ -133,32 +162,3 @@ button {
     }
 }
 
-footer {
-    background-color: #B95CF4;
-    padding: 2rem 1rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    border-radius: 1rem;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-footer img {
-    max-width: 100%;
-    height: auto;
-}
