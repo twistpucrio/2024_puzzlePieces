@@ -12,12 +12,17 @@
 <body>
     <div id="container">
         <header>
-            <a href="/index.html">
-                <img src="/img/seta-black.png" class="back-button" alt="Voltar" width="70" height="50">
+            <a href="index.html">
+                <img src="img/seta-black.png" class="back-button" alt="voltar" width="70" height="50">
             </a>
         </header>
     </div>
     <section id="main" class="content-area">
+        <nav id="navigator">
+            <a class="nav-link" id="facil" href="pagina_1.html">Merida</a>
+            <a class="nav-link" id="medio" href="pagina_2.html">Rapunzel</a>
+            <a class="nav-link" id="dificil" href="pagina_3.html">Moana</a>
+        </nav>
         <br/>
         <br/>
         <div class="game-area">
@@ -31,6 +36,30 @@
             <button id="resetBtn">Resetar</button>
             <button id="nextLevelBtn">Próximo Nível</button>
         </div>
+        <div class="container">
+            <img class="botao" class="centralizado" id="imagem" src="../../img/png-clipart-circle-rectangle-line-play-angle-white-removebg-preview.png" alt="Imagem 1" onclick="trocarImagem()">
+            <audio id="myAudio" src="../rapunzel/rapunzel.mp3"></audio>
+            </div>
+        
+            <script>
+                function trocarImagem() {
+                    var img = document.getElementById("imagem");
+                    var srcAtual = img.getAttribute("src");
+                    if (srcAtual === "../../img/png-clipart-circle-rectangle-line-play-angle-white-removebg-preview.png") {
+                        img.setAttribute("src", "../../img/pausebutton.webp");
+                    } else {
+                        img.setAttribute("src", "../../img/png-clipart-circle-rectangle-line-play-angle-white-removebg-preview.png");
+                    }
+                }
+                document.getElementById('imagem').addEventListener('click', function() {
+                    var audio = document.getElementById('myAudio');
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            </script>
     </section>
     <br/>
     <footer id="footer">
