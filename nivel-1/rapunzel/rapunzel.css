@@ -65,16 +65,15 @@ header img {
     display: inline-block; 
 } */
 
-.game-area {
-    width: 100%;
+#board{
     max-width: 66rem;
-    height: 37rem;
-}
-.puzzle{
+    height: 35rem;
+
     background-color: #B95CF4;
     border: 1rem solid #B95CF4;
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: flex;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -82,9 +81,9 @@ header img {
 
 
 #board img {
-    width: 21.2rem; /*(tamanho original/3)-2 EM PIXELS*/
-    height: 11.1rem;
-    border: 0.1rem solid #B95CF4;
+    width: 21.188rem; /*(tamanho original/3)-2 EM PIXELS*/
+    height: 11.063rem;
+    border: 1px solid #B95CF4;
 }
 .controls {
     width: 100%;
