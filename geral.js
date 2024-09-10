@@ -1,5 +1,3 @@
-
-
 var rows;
 var columns;
 
@@ -79,14 +77,15 @@ function game(rows,columns) {
 
     shuffle(imgOrder);
 
+
     lista = [...imgOrder];
     
     for (let r=0; r < rows; r++) {
         for (let c=0; c < columns; c++) {
-            
+                        
+            //<img id="00" src="1. ou webp">
             var tile = document.createElement("img");
             tile.id = r.toString() + c.toString();
-
 
             tile.src = "img/" + imgOrder.shift() + ".jpg";
 
@@ -133,13 +132,13 @@ function dragDrop() {
 }
 
 function dragEnd() {
-    
 
-    if (!otherTile.src.includes("02.jpg")) { //.jpg ou .webp
+    if (!otherTile.src.includes("02.jpg")) { //.jpg
         return;
     }
-    
-    let currCoords = currTile.id.split(""); //ex) "0-0" -> ["0", "0"]
+
+    let currCoords = currTile.id.split(""); //ex) "00" -> ["0", "0"]
+  
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
     
@@ -183,5 +182,4 @@ function dragEnd() {
     searchAndReplace(idImg1,index1,idImg2,index2);
 
     resolvido();
-    
 }

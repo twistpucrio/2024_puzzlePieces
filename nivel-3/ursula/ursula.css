@@ -1,0 +1,124 @@
+html {
+    background-color: #32025F;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+}
+
+header {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+}
+
+/* navigator {
+    gap: 10px;
+    text-align: center;
+    font-size: 300px;
+    border: 50px;
+    padding: 10px;
+} */
+.nav-link{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding:20px;
+    border-radius: 40px;
+    border: 2px solid  #32025F;
+    background-color: #32025F;
+}
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-area {
+    width: 1300px;
+    height: 700px;
+    background-color:  #32025F;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    background-color:  #32025F;
+    padding: 10px;
+    text-align: center;
+}
+
+#resetBtn{
+    color: white;
+    background-color:#32025F;
+}
+
+#nextLevelBtn{
+    color: white;
+    background-color:#32025F;
+}
+
+/**************************************************************************************/
+
+html {
+    background-color: #09040C;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #32025F;
+
+}
+
+#title {
+    height: 10%;
+    width: 10%;
+}
+
+#board {
+    width: 33.75rem;
+    height: 19rem;
+    background-color: #32025F;
+    border: 10px solid #32025F;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 6.625rem; /*(tamanho original/3)-2 EM PIXELS*/
+    height: 3.688rem;
+    border: 1px solid #32025F;
+}
+
+button {
+    border-radius: 75%;
+    background-color: #32025F;
+    border-width: 0px;
+}
+
