@@ -100,8 +100,8 @@ body {
 }
 
 #board {
-    width: 540px;
-    height: 304px;
+    width: 33.75rem;
+    height: 19rem;
     background-color: #32025F;
     border: 10px solid #32025F;
 
@@ -111,8 +111,8 @@ body {
 }
 
 #board img {
-    width: 106px; /*(tamanho original/3)-2 EM PIXELS*/
-    height: 59px;
+    width: 6.625rem; /*(tamanho original/3)-2 EM PIXELS*/
+    height: 3.688rem;
     border: 1px solid #32025F;
 }
 
