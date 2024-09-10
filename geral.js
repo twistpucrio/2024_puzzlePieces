@@ -1,4 +1,3 @@
-
 var currTile;
 var otherTile;
 
@@ -9,14 +8,15 @@ var imgOrder;
 function game(rows, columns) {
 
     imgOrder = create_imgOrder(rows, columns);
+    console.log(imgOrder);
 
     for (let r=0; r < rows; r++) {
         for (let c=0; c < columns; c++) {
 
-            //<img id="0-0" src="1. ou webp">
+            //<img id="00" src="1. ou webp">
             let tile = document.createElement("img");
             tile.id = r.toString() + c.toString();
-            tile.src = imgOrder.shift() + ".webp";
+            tile.src = "img/" + imgOrder.shift() + ".jpg";
 
             //DRAG FUNCTIONALITY
             tile.addEventListener("dragstart", dragStart);  //click an image to drag
@@ -72,11 +72,11 @@ function dragDrop() {
 }
 
 function dragEnd() {
-    if (!otherTile.src.includes("02.webp")) { //.jpg ou .webp
+    if (!otherTile.src.includes("02.jpg")) { //.jpg
         return;
     }
 
-    let currCoords = currTile.id.split(""); //ex) "0-0" -> ["0", "0"]
+    let currCoords = currTile.id.split(""); //ex) "00" -> ["0", "0"]
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
 
@@ -102,6 +102,4 @@ function dragEnd() {
         turns += 1;
         document.getElementById("turns").innerText = turns;
     }
-
-
 }
