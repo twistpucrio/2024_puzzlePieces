@@ -1,3 +1,14 @@
+html{
+    font-family: 'FonteDisney'; 
+}
+
+@font-face {
+    font-family: 'FonteDisney'; /* Nome que você usará para a fonte */
+    src: url('/fontes/BalsamiqSans-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     text-decoration: none;
     border: none; 
@@ -106,6 +117,7 @@ button {
     border-radius: 1rem;
     background-color: #B95CF4;
     cursor: pointer;
+    font-family:'FonteDisney';
 }
 
 
