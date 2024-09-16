@@ -211,4 +211,24 @@ button:hover{
     transition: all 0.5s;
 }
 
+
+img.botao {
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    height: 5vh; /* Altura total da viewport */
+}
+
+.centralizado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 /*================================================*/

@@ -27,6 +27,31 @@
         <div class="controls">
             <button id="resetBtn">Resetar</button>
         </div>
+        <div class="container"></div>
+            <img class="botao" class="centralizado" id="imagem" 
+            src="../../img/continua.png" alt="Imagem 1" onclick="trocarImagem()">
+            <audio id="myAudio" src="../malevola/malevola.mp3"></audio>
+        </div>
+        
+            <script>
+                function trocarImagem() {
+                    var img = document.getElementById("imagem");
+                    var srcAtual = img.getAttribute("src");
+                    if (srcAtual === "../../img/continua.png") {
+                        img.setAttribute("src", "../../img/pausebutton.webp");
+                    } else {
+                        img.setAttribute("src", "../../img/continua.png");
+                    }
+                }
+                document.getElementById('imagem').addEventListener('click', function() {
+                    var audio = document.getElementById('myAudio');
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            </script>
     </section>
     <br/>
     <footer id="footer">
