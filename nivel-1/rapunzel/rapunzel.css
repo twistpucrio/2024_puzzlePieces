@@ -178,3 +178,28 @@ footer img {
     }
 }
 
+img {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+
+}
+
+img.botao {
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    height: 100vh; /* Altura total da viewport */
+}
+
+.centralizado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
