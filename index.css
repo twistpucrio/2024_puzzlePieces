@@ -11,7 +11,7 @@ body{
 
 }
 
-/*MUDAR A FONTEEEEEEEE */
+
 @font-face {
     font-family: 'FonteDisney'; /* Nome que você usará para a fonte */
     src: url('/fontes/BalsamiqSans-Regular.ttf') format('woff');
