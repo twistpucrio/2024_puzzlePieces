@@ -1,6 +1,27 @@
-html {
+html{
+    font-family: 'FonteDisney';
     background-color: #FABC3F;
-    
+    color: white;
+}
+
+@font-face {
+    font-family: 'FonteDisney'; /* Nome que você usará para a fonte */
+    src: url('/fontes/BalsamiqSans-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    text-decoration: none;
+    border: none; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    gap: 2rem;
+    padding: 2rem;    
     font-family: 'FonteDisney'; 
     
 } /* ok */
@@ -23,17 +44,60 @@ body {
 }
 
 header {
-    padding: 6px;
     display: flex;
-    align-items: center;
-} /* ok */
+    justify-content: space-between;
+}
 
+header img {
+    max-width: 100%;
+    height: auto;
+}
+  
 .content-area {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#board{
+    background-color: #E85C0D;
+    border: 1rem solid #E85C0D;
+    border-radius: 1rem;
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 0.1rem; 
+    margin: 0 auto;
+}
+
+#board img {
+    width: 100%; 
+    height: auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+button {
+    color: white;
+    margin: 0 auto;
+    padding: 1.5rem 4rem; 
+    font-size: 2.5rem; 
+    border-radius: 1rem;
+    background-color: #E85C0D;
+    cursor: pointer;
+    
+}
+
+footer {
+    width: 100%;
+    height: auto;
     padding: 20px;
     /* width: 60%; */
 } /* ok */
@@ -70,22 +134,45 @@ h1{
     width: 45.2rem; /*tamanho aleatório*/
     height: 33.75rem; /*tamanho aleatório*/
     background-color: #E85C0D;
-    border: 10px solid #E85C0D;
-
-    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
 }
 
-#board img {
-    width: 11.125rem; /*(tamanho original/3)-2 EM PIXELS*/
-    height: 8.313rem;
-    border: 1px solid #E85C0D;
+footer p {
+    font-size: 1.2rem;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 720px) {
+
+    .controls {
+        flex-direction: column;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+   
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+    }
 }
   
 /*===============ESTILIZAÇÃO BOTÃO===============*/
-
-
 
 #nextLevelBtn{
     width: 220px;
