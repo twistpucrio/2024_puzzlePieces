@@ -26,6 +26,29 @@ html {
     padding: 2rem;
 }
 
+
+@font-face {
+    font-family: 'FonteDisney'; /* Nome que você usará para a fonte */
+    src: url('/fontes/BalsamiqSans-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-family: 'FonteDisney'; 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white; /*tirar depois*/
+} /* ok */
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -183,3 +206,24 @@ button:hover{
         font-size: 1.2rem;
     }
 }
+
+
+img.botao {
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    height: 5vh; /* Altura total da viewport */
+}
+
+.centralizado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/********************************************/

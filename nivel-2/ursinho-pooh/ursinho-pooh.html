@@ -1,22 +1,91 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PuzzlePieces</title>
-        <link rel="shortcut icon" href="../../img/puzzle-piece.png" type="image/x-icon">
-        <link rel="stylesheet" href="ursinho-pooh.css">
-        <script src="../../geral.js"></script> <!-- js geral.-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzlePieces</title>
+    <link rel="shortcut icon" href="img/puzzle-piece.png" type="image/x-icon">
+    <link rel="stylesheet" href="ursinho-pooh.css">
+    <script src="../../geral.js"></script> <!-- js geral.-->
     <script src="../nivel-2.js"></script>
-    </head>
+</head>
+<body>
+    <div id="container">
+      <header>
+          <a href="../../index.html">
+              <img src="../../img/seta-black.png" class="back-button" alt="voltar" width="50" height="50">
+          </a>
+      </header>
+      <section id="main" class="content-area">
+          <nav id="navigator"></nav>
+          <div id="board" >
+          </div>
+          <h1>N° de movimentos: <span id="turns">0</span></h1>
+          <div class="controls">
+              <button id="resetBtn">Resetar</button>
+              <a href="/nivel-3/ursula/ursula.html">
+              <button id="nextLevelBtn">Próximo Nível</button>
+              </a>
+          </div>
+          <div class="container"></div>
+            <img class="botao" class="centralizado" id="imagem" 
+            src="../../img/continua.png" alt="Imagem 1" onclick="trocarImagem()">
+            <audio id="myAudio" src="../ursinho-pooh/ursinho-pooh.mp3"></audio>
+        </div>
+        
+            <script>
+                function trocarImagem() {
+                    var img = document.getElementById("imagem");
+                    var srcAtual = img.getAttribute("src");
+                    if (srcAtual === "../../img/continua.png") {
+                        img.setAttribute("src", "../../img/pausebutton.webp");
+                    } else {
+                        img.setAttribute("src", "../../img/continua.png");
+                    }
+                }
+                document.getElementById('imagem').addEventListener('click', function() {
+                    var audio = document.getElementById('myAudio');
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            </script>
+      </section>
+      <footer id="footer">
+          <p class="devs">
+              Desenvolvido por: Danielle Guimarães, Julia Simão, Mariana Ribeiro e Vitória Carteri<br/>
+              Projeto TWIST-2024<br/>
+          </p>
+          <a id="github" href="https://github.com/twistpucrio/puzzlePieces" target="_blank">
+              <img src="../../img/github.png" alt="logo do github." width="30" height="30">
+          </a>
+      </footer>
+    </div>
+</body>
+</html>
 
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzlePieces</title>
+    <link rel="shortcut icon" href="../../img/puzzle-piece.png" type="image/x-icon">
+    <link rel="stylesheet" href="ursinho-pooh.css">
+    <script src="../../geral.js"></script>
+    <script src="../nivel-2.js"></script>
+</head>
     <body>
         <div id="container"> 
             <header>
                 <a href="../../index.html">
                     <img src="../../img/seta-black.png" class="back-button" alt="voltar" width="70" height="50">
                 </a>
-                <!-- <audio controls loop autoplay id="audio" src="ursinho-pooh.mp3"></audio> -->
+                 <audio controls loop autoplay id="audio" src="ursinho-pooh.mp3"></audio> 
             </header>
             <section id="main" class="content-area">
                 <div id="board">
@@ -39,3 +108,13 @@
         </div>
     </body>
 </html>
+<body>
+    <div id="board">
+    </div>
+    <h1>N° de movimentos: <span id="turns">0</span></h1>
+    <audio controls loop autoplay id="audio" src="ursinho-pooh.mp3"></audio>
+</body>
+</html>
+
+-->
+
